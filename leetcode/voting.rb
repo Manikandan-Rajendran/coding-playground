@@ -80,20 +80,6 @@
     :rtype: Integer
 =end
     def q(t)
-        # index = 0
-        # @times.each_with_index do |value, indexx|
-        #     if(t == value)
-        #         index=indexx
-        #         break
-        #     elsif(t < value)
-        #         if(indexx!=0)
-        #             index = indexx-1
-        #         end
-        #         break
-        #     elsif(indexx == @times.length-1)
-        #         index = @times.length-1
-        #     end
-        # end
         index = binary_search(t, 0, @times.length-1)
         @leading[index]
     end
