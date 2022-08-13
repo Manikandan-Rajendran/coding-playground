@@ -23,3 +23,18 @@
 # 1 <= numPassengersi <= 100
 # 0 <= fromi < toi <= 1000
 # 1 <= capacity <= 105
+
+
+def car_pooling(trips, capacity)
+    trip_at = []
+    trips.each do|trip|
+        for i in trip[1]...trip[2]
+            trip_at[i] ||= 0
+            trip_at[i] += trip[0]
+            if(trip_at[i]>capacity)
+                return false
+            end
+        end
+    end
+    true
+end
